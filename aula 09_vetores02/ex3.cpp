@@ -3,7 +3,7 @@
 #include <ctime>
 
 int main (){
-	//Média número
+	//EX 3 MÃ©dia nÃºmero
 	int i,x,m;
 	int a[30];
 	srand( time(NULL));
@@ -19,7 +19,7 @@ int main (){
 	
 	printf("\n\nMedia: %d", m / (sizeof(a) / sizeof(a[0])));
 	
-	//Menor número
+	//EX 4 Menor nÃºmero
 	i = sizeof(a) / sizeof(a[0]) - 1;
 	x = 200;
 	for ( i; i >= 0; i--){
@@ -30,7 +30,7 @@ int main (){
 	
 	printf("\n\nMenor numero: %d ", x);
 	
-	//Moda
+	//EX5 Moda
 	int rep, n, r, i2;
 	n = 0;
 	r = 0;
@@ -51,7 +51,7 @@ int main (){
 	printf("\n\nModa: %d", n);
 	printf("\nRepeticoes: %d", r);
 	
-	//SOMA 22
+	//EX 6SOMA 22
 	int ai[30],c;
 	c = 1;
 	for (i = 0; i < 29; i ++){
