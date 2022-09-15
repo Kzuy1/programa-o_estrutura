@@ -4,18 +4,25 @@
 #include <locale.h>
 #include <cctype>
 
-//Junta os dois
+//Intercalar
 
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	srand( time(NULL));
 	int i, k,d,temp;
-	int a[10],b[10],c[20];
+	int a[10],b[10],c[10];
 	
 	
 	for (i = 0; i < 10; i++){
 		a[i] = rand()%10;
 		b[i] = rand()%10;	
+	}
+	
+	i = 0;
+	while (i < 10){
+		c[i] = a[i];
+		c[i + 1] = b[i + 1];
+		i = i + 2;
 	}
 	
 	printf("A Desorgnizado:\n");
@@ -26,6 +33,11 @@ int main(){
 	printf("\nB Desorgnizado:\n");
 	for(i = 0; i < 10; i++){
 		printf("%d ", b[i]);
+	}
+	
+	printf("\nC Desorgnizado:\n");
+	for(i = 0; i < 10; i++){
+		printf("%d ", c[i]);
 	}
 
 	for ( i = 0; i < 10; i++){
@@ -49,18 +61,9 @@ int main(){
 		}
 	}
 
-	for (i = 0; i < 10; i++){
-		c[i] = a[i];
-		c[i + 10] = b[i];
-	}
-	
-	printf("\nC Desorgnizado:\n");
-	for(i = 0; i < 20; i++){
-		printf("%d ", c[i]);
-	}
 
-	for ( i = 0; i < 20; i++){
-		for ( k = 0; k < 20; k++){
+	for ( i = 0; i < 10; i++){
+		for ( k = 0; k < 10; k++){
 			if (c[i] < c[k]){
 				temp = c[i];
 				c[i] = c[k];
@@ -80,7 +83,7 @@ int main(){
 		printf("%d ", b[i]);
 	}
 	printf("\nC Orgnizado:\n");
-	for(i = 0; i < 20; i++){
+	for(i = 0; i < 10; i++){
 		printf("%d ", c[i]);
 	}
 	
