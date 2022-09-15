@@ -6,8 +6,17 @@
 
 //Intercalar
 
-int i, d, c, m, t;
+int i, d, c, m;
 int a[100], dezena[100], centena[100], milhar[100];
+
+void mostrar_valores(int p[100], int t){
+	for( i = 0; i < t; i++){
+		if (p[i] != 0 ){
+		printf("%d ", p[i]);	
+		}
+		
+	}
+}
 
 int main(){ 
 	setlocale(LC_ALL, "Portuguese");
@@ -31,32 +40,13 @@ int main(){
 			m++;
 		}	
 	}
-	
 	printf("Dezena:\n\n");
-	t = sizeof(dezena) / sizeof(dezena[0]);
-	for( i = 0; i < t; i++){
-		if (dezena[i] != 0 ){
-		printf("%d ", dezena[i]);	
-		}
-		
-	}
+	mostrar_valores(dezena, sizeof(dezena) / sizeof(dezena[0]));
 	
 	printf("\n\nCentena:\n\n");
-	t = sizeof(centena) / sizeof(centena[0]);
-	for( i = 0; i < t; i++){
-		if (centena[i] != 0 ){
-		printf("%d ", centena[i]);	
-		}
-		
-	}
+	mostrar_valores(centena, sizeof(centena) / sizeof(centena[0]));
 	
 	printf("\n\nMilhar:\n\n");
-	t = sizeof(milhar) / sizeof(milhar[0]);
-	for( i = 0; i < t; i++){
-		if (milhar[i] != 0 ){
-		printf("%d ", milhar[i]);	
-		}
-		
-	}
+	mostrar_valores(milhar, sizeof(milhar) / sizeof(milhar[0]));
 	
 }

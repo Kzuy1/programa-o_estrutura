@@ -6,12 +6,31 @@
 
 //Intercalar
 
+int i, k, d, temp;
+int a[10],b[10],c[10];
+
+void mostrar_valores(int p[], int t){
+	for( i = 0; i < t; i++){
+		printf("%d ", p[i]);
+	}
+}
+
+void organizar_valores(int p[], int t){
+	for ( i = 0; i < t; i++){
+		for ( k = 0; k < t; k++){
+			if (a[i] < a[k]){
+				temp = a[i];
+				a[i] = a[k];
+				a[k] = temp;
+			}
+		}
+	}
+	
+}
+
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	srand( time(NULL));
-	int i, k,d,temp;
-	int a[10],b[10],c[10];
-	
 	
 	for (i = 0; i < 10; i++){
 		a[i] = rand()%10;
@@ -26,66 +45,31 @@ int main(){
 	}
 	
 	printf("A Desorgnizado:\n");
-	for(i = 0; i < 10; i++){
-		printf("%d ", a[i]);
-	}
+	mostrar_valores(a, sizeof(a) / sizeof(a[0]));
 	
 	printf("\nB Desorgnizado:\n");
-	for(i = 0; i < 10; i++){
-		printf("%d ", b[i]);
-	}
+	mostrar_valores(b, sizeof(b) / sizeof(b[0]));
 	
 	printf("\nC Desorgnizado:\n");
 	for(i = 0; i < 10; i++){
 		printf("%d ", c[i]);
 	}
 
-	for ( i = 0; i < 10; i++){
-		for ( k = 0; k < 10; k++){
-			if (a[i] < a[k]){
-				temp = a[i];
-				a[i] = a[k];
-				a[k] = temp;
-			}
-		}
-	}
+	organizar_valores(a, sizeof(a) / sizeof(a[0]));
 	
+	organizar_valores(b, sizeof(b) / sizeof(b[0]));
 	
-	for ( i = 0; i < 10; i++){
-		for ( k = 0; k < 10; k++){
-			if (b[i] < b[k]){
-				temp = b[i];
-				b[i] = b[k];
-				b[k] = temp;
-			}
-		}
-	}
-
-
-	for ( i = 0; i < 10; i++){
-		for ( k = 0; k < 10; k++){
-			if (c[i] < c[k]){
-				temp = c[i];
-				c[i] = c[k];
-				c[k] = temp;
-			}
-		}
-	}
+	organizar_valores(c, sizeof(c) / sizeof(c[0]));
 	
 	printf("\n\n\n\n");
 	printf("A Orgnizado:\n");
-	for(i = 0; i < 10; i++){
-		printf("%d ", a[i]);
-	}
+	mostrar_valores(a, sizeof(a) / sizeof(a[0]));
 	
 	printf("\nB Orgnizado:\n");
-	for(i = 0; i < 10; i++){
-		printf("%d ", b[i]);
-	}
+	mostrar_valores(b, sizeof(b) / sizeof(b[0]));
+	
 	printf("\nC Orgnizado:\n");
-	for(i = 0; i < 10; i++){
-		printf("%d ", c[i]);
-	}
+	mostrar_valores(c, sizeof(c) / sizeof(c[0]));
 	
 		
 }
