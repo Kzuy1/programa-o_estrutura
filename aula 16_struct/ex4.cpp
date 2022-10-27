@@ -30,13 +30,23 @@ struct Locacao {
 };
 
 struct Locadora{
-	Cliente clientes;
-	CD cds;
-	Locacao locacao;
+	Cliente clientes[50];
+	CD cds[200];
+	Locacao locacao[200];
 };
 
 int main() {
+	Locadora l1;
 	
+	l1.clientes[0].name = 'Jovano';
+	l1.clientes[0].salario = 5000;
 	
+	l1.clientes[0].dataCadastro.dia = 28;
+	l1.clientes[0].dataCadastro.mes =	2;
+	l1.clientes[0].dataCadastro.ano = 2020;
+	
+	l1.clientes[0].dataNascimento.dia = 30;
+	l1.clientes[0].dataNascimento.mes = 2;
+	l1.clientes[0].dataNascimento.ano = 1969;
 	
 }
