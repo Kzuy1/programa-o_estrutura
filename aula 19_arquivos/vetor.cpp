@@ -12,6 +12,12 @@ void preenche_aleatorio(int aux[], int length){
 	}
 }
 
+void preenche_aleatorio100(int aux[], int length){
+	for(int i = 0; i < length; i++){
+		aux[i] = rand()%100;
+	}
+}
+
 void mostra_vetor(int aux[], int tam){
 	for(int i = 0; i < tam; i++){
 		printf("\n%d", aux[i]);
