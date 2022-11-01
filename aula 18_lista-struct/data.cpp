@@ -3,6 +3,8 @@
 #include <ctime>
 #include <locale.h>
 #include <iostream>
+#include <string>
+using namespace std;
 
 struct Data {
 	int dia;
@@ -34,7 +36,17 @@ Data geraDataAleatorio (){
 	
 	aux.dia = rand() % 30 + 0001;
 	aux.mes = rand() % 12 + 0001;
-	aux.ano = rand() % 49 + 1950;
+	aux.ano = rand() % 27 + 1995;
+	return aux;
+}
+
+string randomNameGeneration (){
+	string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	string aux;
+
+	for(int i = 0; i < 5; i++){
+		aux = aux + alfabeto[rand() % 25];
+	}
 	return aux;
 }
 
@@ -64,6 +76,6 @@ void verificaData (int d, int m, int a) {
 }
 
 void mostraData(Data aux){
-	printf("\n%02d/%02d/%04d", aux.dia, aux.mes, aux.ano);
+	printf("%02d/%02d/%04d", aux.dia, aux.mes, aux.ano);
 }
 
