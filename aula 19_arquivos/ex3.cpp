@@ -13,7 +13,7 @@ dados v1[100];
 
 void grava_arquivo(){
 	FILE *arq;
-	arq = fopen("base.txt", "wt");
+	arq = fopen("base.db", "wb");
 	
 	char nome[10][30]= {"Miguel", "Arthur", "Gael", "Heitor", "Helena", "Alice", "Theo", "Laura", "Davi", "Gabriel"};
 	
@@ -22,7 +22,10 @@ void grava_arquivo(){
 	} else {
 		for (int i = 0; i < 100; i++){
 			strcpy(v1[i].nome, nome[rand() % 10]);
-			fprintf(arq, "%s\n", v1[i].nome);
+			v1[i].idade = rand() % 50
+			fwrite(v1[i].nome, sizeof(char), 30, arq);
+			fwrite(v1[i].idade, sizeof(int), 30, arq);
+			
 		}
 		
 		fclose(arq);
@@ -41,10 +44,10 @@ void le_arquivo(){
 	} else {
 		for(; !feof(arq); i++){
 			if(!feof(arq))
-			fscanf(arq, "%s\n", &nome[i][30]);
+			fread(&nome[i], sizeof(char), 30, arq);
 			
 		}
-		for(i = 1; i <101; i++){
+		for(i = 0; i <100; i++){
 			cout << nome[i] << "\n";
 		}
 		fclose(arq);
