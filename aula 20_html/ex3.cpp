@@ -2,6 +2,8 @@
 #include <string>
 #include <cmath>
 #include <locale.h>
+#include <iostream>
+#include <sstream>
 using namespace std;
 
 char Classe(int ip1){
@@ -45,7 +47,7 @@ int Bits(char classe, int cidr){
 }
 
 string mostra_ip(unsigned int ip){
-	char str[16];
+	stringstream  str;
 	int ip1, ip2, ip3, ip4;
 	ip4 = ip%256;
 	ip = ip/256;
@@ -53,9 +55,9 @@ string mostra_ip(unsigned int ip){
 	ip = ip/256;
 	ip2 = ip%256;
 	ip1 = ip/256;
-	sprintf(str,"%d.%d.%d.%d",ip1,ip2,ip3,ip4);
-	puts(str);
-	return(str);
+	str << ip1 << "." << ip2 << "." << ip3 << "." << ip4;
+	string strc2 = str.str();
+	return(strc2);
 }
 
 string MascaraCustom(int cidr){
